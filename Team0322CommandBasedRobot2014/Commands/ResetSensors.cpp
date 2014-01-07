@@ -4,7 +4,7 @@ ResetSensors::ResetSensors() {
 	// Use requires() here to declare subsystem dependencies
 	// eg. requires(chassis);
 	Requires(chassisSensors);
-	//SetTimeout(0.1);
+	SetTimeout(0.25);
 }
 
 // Called just before this Command runs the first time
