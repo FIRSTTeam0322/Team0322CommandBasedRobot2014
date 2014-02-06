@@ -13,7 +13,7 @@ private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
 	RobotDrive *robotDrive;
-	Victor *frontLeftMotor, *frontRightMotor, *rearLeftMotor, *rearRightMotor;
+	Talon *frontLeftMotor, *frontRightMotor, *rearLeftMotor, *rearRightMotor;
 	DigitalOutput *leftFrontBrake, *leftRearBrake, *rightFrontBrake, *rightRearBrake;
 public:
 	Chassis();

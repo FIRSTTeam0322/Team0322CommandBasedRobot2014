@@ -5,10 +5,10 @@
 
 Chassis::Chassis() : Subsystem("Chassis") {
 	
-	frontLeftMotor = new Victor(DIGITAL_MODULE_LEFT,1);
-	rearLeftMotor = new Victor(DIGITAL_MODULE_LEFT,2);
-	frontRightMotor = new Victor(DIGITAL_MODULE_RIGHT,1);
-	rearRightMotor = new Victor(DIGITAL_MODULE_RIGHT,2);
+	frontLeftMotor = new Talon(DIGITAL_MODULE_LEFT,1);
+	rearLeftMotor = new Talon(DIGITAL_MODULE_LEFT,2);
+	frontRightMotor = new Talon(DIGITAL_MODULE_RIGHT,1);
+	rearRightMotor = new Talon(DIGITAL_MODULE_RIGHT,2);
 	robotDrive = new RobotDrive(frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor);
 	robotDrive->SetInvertedMotor(robotDrive->kFrontLeftMotor, true);
 	robotDrive->SetInvertedMotor(robotDrive->kFrontRightMotor, true);
