@@ -25,8 +25,8 @@ void SmartDashboardUpdater::Execute() {
 	SmartDashboard::PutNumber("Right Drive Stick", oi->getDriveStickRight()->GetY());
 	SmartDashboard::PutNumber("Left Front Motor", chassis->getSpeedControllerOutput(1));
 	SmartDashboard::PutNumber("Left Rear Motor", chassis->getSpeedControllerOutput(3));	
-	SmartDashboard::PutNumber("Right Front Motor", -(chassis->getSpeedControllerOutput(2)));
-	SmartDashboard::PutNumber("Right Rear Motor", -(chassis->getSpeedControllerOutput(4)));
+	SmartDashboard::PutNumber("Right Front Motor", chassis->getSpeedControllerOutput(2));
+	SmartDashboard::PutNumber("Right Rear Motor", chassis->getSpeedControllerOutput(4));
 }
 
 // Make this return true when this Command no longer needs to run execute()

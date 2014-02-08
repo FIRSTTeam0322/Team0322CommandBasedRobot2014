@@ -67,7 +67,7 @@ float Chassis::getSpeedControllerOutput(int selection) {
 			break;
 		
 		case 2:
-			return(frontRightMotor->Get());
+			return(-(frontRightMotor->Get()));
 			break;
 		
 		case 3:
@@ -75,7 +75,7 @@ float Chassis::getSpeedControllerOutput(int selection) {
 			break;
 		
 		case 4:
-			return(rearRightMotor->Get());
+			return(-(rearRightMotor->Get()));
 			break;
 		
 		default:
