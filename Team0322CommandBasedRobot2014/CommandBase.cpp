@@ -1,9 +1,10 @@
 #include "CommandBase.h"
-#include "Subsystems/DriverStationLCDSystem.h"
-#include "Subsystems/ChassisSensors.h"
-#include "Subsystems/AutonomusModeSwitches.h"
-#include "Subsystems/Chassis.h"
-#include "Subsystems/Vision.h"
+//#include "Subsystems/DriverStationLCDSystem.h"
+//#include "Subsystems/ChassisSensors.h"
+//#include "Subsystems/AutonomusModeSwitches.h"
+//#include "Subsystems/Chassis.h"
+//#include "Subsystems/Kicker.h"
+//#include "Subsystems/Vision.h"
 #include "Commands/Scheduler.h"
 
 CommandBase::CommandBase(const char *name) : Command(name) {
@@ -18,6 +19,7 @@ ChassisSensors* CommandBase::chassisSensors = NULL;
 AutonomusModeSwitches* CommandBase::autonomusModeSwitches = NULL;
 Chassis* CommandBase::chassis = NULL;
 Vision* CommandBase::vision = NULL;
+Kicker* CommandBase::kicker = NULL;
 OI* CommandBase::oi = NULL;
 
 void CommandBase::init() {
@@ -27,6 +29,7 @@ void CommandBase::init() {
 	chassisSensors = new ChassisSensors();
 	autonomusModeSwitches = new AutonomusModeSwitches();
 	chassis = new Chassis();
+	kicker = new Kicker();
 	vision = new Vision();	
 	oi = new OI();
 }

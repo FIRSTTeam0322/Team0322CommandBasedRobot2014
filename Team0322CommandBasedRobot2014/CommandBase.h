@@ -1,11 +1,11 @@
 #ifndef COMMAND_BASE_H
 #define COMMAND_BASE_H
-
 #include "Commands/Command.h"
 #include "Subsystems/DriverStationLCDSystem.h"
 #include "Subsystems/ChassisSensors.h"
 #include "Subsystems/AutonomusModeSwitches.h"
 #include "Subsystems/Chassis.h"
+#include "Subsystems/Kicker.h"
 #include "Subsystems/Vision.h"
 #include "OI.h"
 
@@ -25,6 +25,7 @@ public:
 	static ChassisSensors *chassisSensors;
 	static AutonomusModeSwitches *autonomusModeSwitches;
 	static Chassis *chassis;
+	static Kicker *kicker;
 	static Vision *vision;
 	static OI *oi;
 };
