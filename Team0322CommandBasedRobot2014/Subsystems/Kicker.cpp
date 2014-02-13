@@ -28,3 +28,26 @@ void Kicker::InitDefaultCommand() {
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
 
+void Kicker::unlockKicker() {
+	kickerRelease->Set(-0.25);
+}
+
+void Kicker::lockKicker() {
+	kickerRelease->Set(0.25);
+}
+
+void Kicker::runRollersIn() {
+	kickerFront1->Set(1.0);
+	kickerFront2->Set(1.0);
+}
+
+void Kicker::runRollersOut() {
+	kickerFront1->Set(-1.0);
+	kickerFront2->Set(-1.0);
+}
+
+int Kicker::kickerStatus() {
+	if (kickerResetCheck) return 1;
+	else if (kickerReleaseCheck) return 2;
+	else return 0;
+}

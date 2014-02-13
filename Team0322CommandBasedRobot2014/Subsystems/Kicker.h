@@ -17,9 +17,11 @@ private:
 public:
 	Kicker();
 	void InitDefaultCommand();
-	void fireKicker();
-	void resetKicker();
-	int kickerStatus();
+	void lockKicker(void);
+	void unlockKicker(void);
+	void runRollersIn(void);
+	void runRollersOut(void);
+	int kickerStatus(void);
 };
 
 #endif
