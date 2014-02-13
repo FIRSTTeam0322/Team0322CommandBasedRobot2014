@@ -1,4 +1,5 @@
 #include "ResetKicker.h"
+#include "ResetKickerLock.h"
 #include "ReelInKicker.h"
 #include "ResetReels.h"
 
@@ -19,6 +20,7 @@ ResetKicker::ResetKicker() {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
+		AddSequential(new ResetKickerLock());
 		AddSequential(new ReelInKicker());
 		AddSequential(new ResetReels());
 }
