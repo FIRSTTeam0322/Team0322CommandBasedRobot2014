@@ -11,6 +11,7 @@ private:
 	Joystick *driveStickLeft, *driveStickRight, *manipulatorStick;
 	
 	JoystickButton *brake, *precisionDriveButton;
+	JoystickButton *kickerFire, *kickerReset;
 	
 public:
 	OI();

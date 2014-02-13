@@ -1,6 +1,10 @@
 #include "OI.h"
 #include "Commands/BrakeControl.h"
 #include "Commands/PrecisionDrive.h"
+#include "Commands/FireKicker.h"
+#include "Commands/ReelInKicker.h"
+#include "Commands/ResetKicker.h"
+#include "Commands/ResetReels.h"
 
 OI::OI() {
 	// Process operator interface input here.
@@ -18,6 +22,11 @@ OI::OI() {
 	precisionDriveButton = new JoystickButton(driveStickRight, 1);
 	precisionDriveButton->WhileHeld(new PrecisionDrive());
 	
+	// Create the Kicker controls
+	kickerFire = new JoystickButton(manipulatorStick, 1);
+	kickerReset = new JoystickButton(manipulatorStick, 2);
+	kickerFire->WhileHeld(new FireKicker());
+	kickerReset->WhileHeld(new ResetKicker());
 }
 
 Joystick* OI::getDriveStickLeft() {
