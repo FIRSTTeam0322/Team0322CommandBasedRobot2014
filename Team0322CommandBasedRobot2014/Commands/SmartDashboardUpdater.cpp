@@ -27,7 +27,7 @@ void SmartDashboardUpdater::Execute() {
 	SmartDashboard::PutNumber("Left Rear Motor", chassis->getSpeedControllerOutput(3));	
 	SmartDashboard::PutNumber("Right Front Motor", chassis->getSpeedControllerOutput(2));
 	SmartDashboard::PutNumber("Right Rear Motor", chassis->getSpeedControllerOutput(4));
-	SmartDashboard::PutBoolean("KickerStatus", kicker->kickerResetStatus());
+	SmartDashboard::PutBoolean("Kicker Status", kicker->kickerResetStatus());
 }
 
 // Make this return true when this Command no longer needs to run execute()
