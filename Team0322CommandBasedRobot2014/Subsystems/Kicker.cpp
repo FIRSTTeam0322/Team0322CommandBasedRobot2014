@@ -37,13 +37,13 @@ void Kicker::lockKicker() {
 }
 
 void Kicker::runRollersIn() {
-	kickerFront1->Set(1.0);
-	kickerFront2->Set(1.0);
+	kickerLeft->Set(1.0);
+	kickerRight->Set(1.0);
 }
 
 void Kicker::runRollersOut() {
-	kickerFront1->Set(-1.0);
-	kickerFront2->Set(-1.0);
+	kickerLeft->Set(1.0);
+	kickerRight->Set(1.0);
 }
 
 int Kicker::kickerStatus() {
