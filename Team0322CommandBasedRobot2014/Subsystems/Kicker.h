@@ -22,6 +22,7 @@ public:
 	void runRollersIn(void);
 	void runRollersOut(void);
 	int kickerStatus(void);
+	bool kickerResetStatus(void);
 };
 
 #endif

@@ -51,3 +51,8 @@ int Kicker::kickerStatus() {
 	else if (kickerReleaseCheck) return 2;
 	else return 0;
 }
+
+bool Kicker::kickerResetStatus() {
+	if (kickerResetCheck) return true;
+	else return false;
+}
