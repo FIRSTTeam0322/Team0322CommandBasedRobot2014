@@ -1,6 +1,6 @@
-#include "ResetRollers.h"
+#include "ResetReels.h"
 
-ResetRollers::ResetRollers() {
+ResetReels::ResetReels() {
 	// Use requires() here to declare subsystem dependencies
 	// eg. requires(chassis);
 	Requires(kicker);
@@ -8,28 +8,28 @@ ResetRollers::ResetRollers() {
 }
 
 // Called just before this Command runs the first time
-void ResetRollers::Initialize() {
+void ResetReels::Initialize() {
 	resetTimer->Start();
 }
 
 // Called repeatedly when this Command is scheduled to run
-void ResetRollers::Execute() {
+void ResetReels::Execute() {
 	kicker->runRollersOut();
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool ResetRollers::IsFinished() {
+bool ResetReels::IsFinished() {
 	if (resetTimer->Get() < 1.0) return false;
 	else return true;
 }
 
 // Called once after isFinished returns true
-void ResetRollers::End() {
+void ResetReels::End() {
 	resetTimer->Stop();
 	resetTimer->Reset();
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void ResetRollers::Interrupted() {
+void ResetReels::Interrupted() {
 }

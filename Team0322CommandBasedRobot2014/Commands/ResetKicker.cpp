@@ -1,6 +1,6 @@
 #include "ResetKicker.h"
 #include "ReelInKicker.h"
-#include "ResetRollers.h"
+#include "ResetReels.h"
 
 ResetKicker::ResetKicker() {
         // Add Commands here:
@@ -20,5 +20,5 @@ ResetKicker::ResetKicker() {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
 		AddSequential(new ReelInKicker());
-		AddSequential(new ResetRollers());
+		AddSequential(new ResetReels());
 }
