@@ -13,12 +13,12 @@ void FireKicker::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void FireKicker::Execute() {
-	kicker->unlockKicker();
+	if (kicker->kickerResetStatus()) kicker->unlockKicker();
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool FireKicker::IsFinished() {
-	if (!(kicker->kickerReleaseCheck)) return false;
+	if (kicker->kickerResetStatus()) return false;
 	else return true;
 }
 
