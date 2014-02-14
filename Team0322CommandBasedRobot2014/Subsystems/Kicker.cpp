@@ -15,8 +15,8 @@ Kicker::Kicker() : Subsystem("Kicker") {
 	kickerFront2 = new DigitalInput(DIGITAL_MODULE_RIGHT,5);
 	
 	// Create the DigitalInput objects for the kicker release and reset detectors
-	kickerResetCheck = new DigitalInput(DIGITAL_MODULE_LEFT,6);
-	kickerReleaseCheck = new DigitalInput(DIGITAL_MODULE_RIGHT,6);
+	kickerSensorLeft = new DigitalInput(DIGITAL_MODULE_LEFT,6);
+	kickerSensorRight = new DigitalInput(DIGITAL_MODULE_RIGHT,6);
 }
     
 void Kicker::InitDefaultCommand() {
@@ -46,15 +46,24 @@ void Kicker::runRollersOut() {
 	kickerRightReel->Set(1.0);
 }
 
-int Kicker::kickerStatus() {
-	if (kickerResetCheck) return 1;
-	else if (kickerReleaseCheck) return 2;
-	else return 0;
-}
-
-bool Kicker::kickerResetStatus() {
-	if (kickerResetCheck) return true;
-	else return false;
+bool Kicker::kickerStatus(int side) {
+	switch(side) {
+	case 0:
+		if (kickerSensorLeft && kickerSensorRight) return true;
+		else return false;
+		break;
+	case 1:
+		if (kickerSensorLeft) return true;
+		else return false;
+		break;
+	case 2:
+		if (kickerSensorRight) return true;
+		else return false;
+		break;
+	default:
+		return false;
+		break;
+	}
 }
 
 void Kicker::manualReelControl(float reelSpeed) {

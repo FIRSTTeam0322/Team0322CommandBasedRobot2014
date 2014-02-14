@@ -13,7 +13,10 @@ private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
 	Victor *kickerLeftReel, *kickerRightReel, *kickerRelease;
-	DigitalInput *kickerFront1, *kickerFront2, *kickerReleaseCheck, *kickerResetCheck;
+	DigitalInput *kickerFront1, *kickerFront2, *kickerSensorLeft, *kickerSensorRight;
+	
+	bool kickerResetCheck(void);
+	bool kickerReleaseCheck(void);
 public:
 	Kicker();
 	void InitDefaultCommand();
@@ -21,8 +24,7 @@ public:
 	void unlockKicker(void);
 	void runRollersIn(void);
 	void runRollersOut(void);
-	int kickerStatus(void);
-	bool kickerResetStatus(void);
+	bool kickerStatus(int);
 	void manualReelControl(float);
 	void manualLockControl(float);
 };
