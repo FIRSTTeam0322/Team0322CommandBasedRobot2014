@@ -7,8 +7,8 @@ Kicker::Kicker() : Subsystem("Kicker") {
 	kickerRelease = new Victor(DIGITAL_MODULE_LEFT,3);
 	
 	// Create the SpeedController objects for the kicker retraction mechanism
-	kickerLeft = new Victor(DIGITAL_MODULE_LEFT,4);
-	kickerRight = new Victor(DIGITAL_MODULE_RIGHT,4);
+	kickerLeftReel = new Victor(DIGITAL_MODULE_LEFT,4);
+	kickerRightReel = new Victor(DIGITAL_MODULE_RIGHT,4);
 	
 	// Create the DigitalInput objects for the kicker set detectors
 	kickerFront1 = new DigitalInput(DIGITAL_MODULE_LEFT,5);
@@ -37,13 +37,13 @@ void Kicker::lockKicker() {
 }
 
 void Kicker::runRollersIn() {
-	kickerLeft->Set(1.0);
-	kickerRight->Set(1.0);
+	kickerLeftReel->Set(1.0);
+	kickerRightReel->Set(1.0);
 }
 
 void Kicker::runRollersOut() {
-	kickerLeft->Set(1.0);
-	kickerRight->Set(1.0);
+	kickerLeftReel->Set(1.0);
+	kickerRightReel->Set(1.0);
 }
 
 int Kicker::kickerStatus() {
@@ -55,4 +55,13 @@ int Kicker::kickerStatus() {
 bool Kicker::kickerResetStatus() {
 	if (kickerResetCheck) return true;
 	else return false;
+}
+
+void Kicker::manualReelControl(float reelSpeed) {
+	kickerLeftReel->Set(reelSpeed);
+	kickerRightReel->Set(reelSpeed);
+}
+
+void Kicker::manualLockControl(float lockSpeed) {
+	kickerRelease->Set(lockSpeed);
 }

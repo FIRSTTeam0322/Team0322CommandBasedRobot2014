@@ -5,6 +5,8 @@
 #include "Commands/ReelInKicker.h"
 #include "Commands/ResetKicker.h"
 #include "Commands/ResetReels.h"
+#include "Commands/ManualReelControl.h"
+#include "Commands/ManualLockControl.h"
 
 OI::OI() {
 	// Process operator interface input here.
@@ -27,6 +29,13 @@ OI::OI() {
 	kickerReset = new JoystickButton(manipulatorStick, 2);
 	kickerFire->WhileHeld(new FireKicker());
 	kickerReset->WhileHeld(new ResetKicker());
+	
+	// Create the Kicker & Reel Override controls
+	reelOverride = new JoystickButton(manipulatorStick, 5);
+	kickerOverride = new JoystickButton(manipulatorStick, 6);
+	
+	if (reelOverride->Get()) reelOverride->WhileHeld(new ManualReelControl());
+	else if (kickerOverride->Get()) kickerOverride->WhileHeld(new ManualLockControl());
 }
 
 Joystick* OI::getDriveStickLeft() {

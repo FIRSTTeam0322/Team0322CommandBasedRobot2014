@@ -12,7 +12,7 @@ class Kicker: public Subsystem {
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
-	Victor *kickerLeft, *kickerRight, *kickerRelease;
+	Victor *kickerLeftReel, *kickerRightReel, *kickerRelease;
 	DigitalInput *kickerFront1, *kickerFront2, *kickerReleaseCheck, *kickerResetCheck;
 public:
 	Kicker();
@@ -23,6 +23,8 @@ public:
 	void runRollersOut(void);
 	int kickerStatus(void);
 	bool kickerResetStatus(void);
+	void manualReelControl(float);
+	void manualLockControl(float);
 };
 
 #endif

@@ -12,6 +12,7 @@ private:
 	
 	JoystickButton *brake, *precisionDriveButton;
 	JoystickButton *kickerFire, *kickerReset;
+	JoystickButton *kickerOverride, *reelOverride;
 	
 public:
 	OI();
