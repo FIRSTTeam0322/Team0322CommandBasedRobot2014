@@ -16,7 +16,7 @@ private:
 public:
 	AutonomusModeSwitches();
 	void InitDefaultCommand();
-	int GetMode();
+	int GetMode(void);
 };
 
 #endif
