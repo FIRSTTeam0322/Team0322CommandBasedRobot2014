@@ -18,7 +18,7 @@ void ReelInKicker::Execute() {
 
 // Make this return true when this Command no longer needs to run execute()
 bool ReelInKicker::IsFinished() {
-	if (kicker->kickerResetStatus()) return true;
+	if (kicker->kickerStatus(0)) return true;
 	else return false;
 }
 
