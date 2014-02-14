@@ -4,6 +4,7 @@
 #include "Commands/DriversStationUpdater.h"
 #include "Commands/ClearLCD.h"
 #include "Commands/AutonSelector.h"
+#include "Commands/SmartDashboardUpdater.h"
 #include "CommandBase.h"
 
 class Team0322CommandBasedRobot2014 : public IterativeRobot {
@@ -12,6 +13,7 @@ private:
 	Command* resetSensors;
 	Command* driversStationUpdater;
 	Command* clearLCD;
+	Command* smartDashboardUpdater;
 	LiveWindow *lw;
 	
 	virtual void RobotInit() {
@@ -20,21 +22,28 @@ private:
 		resetSensors = new ResetSensors();
 		driversStationUpdater = new DriversStationUpdater();
 		clearLCD = new ClearLCD();
+		smartDashboardUpdater = new SmartDashboardUpdater();
 		lw = LiveWindow::GetInstance();
 		
 		resetSensors->SetRunWhenDisabled(true);
 		driversStationUpdater->SetRunWhenDisabled(true);
 		clearLCD->SetRunWhenDisabled(true);
+		smartDashboardUpdater->SetRunWhenDisabled(true);
+		
+		clearLCD->Start();
+		resetSensors->Start();
+		
+		resetSensors->Cancel();
 	}
 	
 	virtual void DisabledInit() {
-		clearLCD->Start();
-		resetSensors->Start();
+		
 	}
 	
 	virtual void DisabledPeriodic() {
-		resetSensors->Cancel();
 		driversStationUpdater->Run();
+		smartDashboardUpdater->Run();
+		/*
 		SmartDashboard::PutNumber("Gyro Angle", CommandBase::chassisSensors->getGyroAngle());
 		SmartDashboard::PutNumber("Left Drive Encoder", CommandBase::chassisSensors->getLeftDistance());
 		SmartDashboard::PutNumber("Right Drive Encoder", CommandBase::chassisSensors->getRightDistance());
@@ -47,6 +56,8 @@ private:
 		SmartDashboard::PutNumber("Left Rear Motor", CommandBase::chassis->getSpeedControllerOutput(3));	
 		SmartDashboard::PutNumber("Right Front Motor", CommandBase::chassis->getSpeedControllerOutput(2));
 		SmartDashboard::PutNumber("Right Rear Motor", CommandBase::chassis->getSpeedControllerOutput(4));
+		SmartDashboard::PutBoolean("Kicker Status", CommandBase::kicker->kickerStatus(0));
+		*/
 		Scheduler::GetInstance()->Run();
 	}
 	
@@ -58,6 +69,8 @@ private:
 	
 	virtual void AutonomousPeriodic() {
 		driversStationUpdater->Run();
+		smartDashboardUpdater->Run();
+		/*
 		SmartDashboard::PutNumber("Gyro Angle", CommandBase::chassisSensors->getGyroAngle());
 		SmartDashboard::PutNumber("Left Drive Encoder", CommandBase::chassisSensors->getLeftDistance());
 		SmartDashboard::PutNumber("Right Drive Encoder", CommandBase::chassisSensors->getRightDistance());
@@ -70,6 +83,8 @@ private:
 		SmartDashboard::PutNumber("Left Rear Motor", CommandBase::chassis->getSpeedControllerOutput(3));	
 		SmartDashboard::PutNumber("Right Front Motor", CommandBase::chassis->getSpeedControllerOutput(2));
 		SmartDashboard::PutNumber("Right Rear Motor", CommandBase::chassis->getSpeedControllerOutput(4));
+		SmartDashboard::PutBoolean("Kicker Status", CommandBase::kicker->kickerStatus(0));
+		*/
 		Scheduler::GetInstance()->Run();
 	}
 	
@@ -84,6 +99,8 @@ private:
 	
 	virtual void TeleopPeriodic() {
 		driversStationUpdater->Run();
+		smartDashboardUpdater->Run();
+		/*
 		SmartDashboard::PutNumber("Gyro Angle", CommandBase::chassisSensors->getGyroAngle());
 		SmartDashboard::PutNumber("Left Drive Encoder", CommandBase::chassisSensors->getLeftDistance());
 		SmartDashboard::PutNumber("Right Drive Encoder", CommandBase::chassisSensors->getRightDistance());
@@ -96,6 +113,8 @@ private:
 		SmartDashboard::PutNumber("Left Rear Motor", CommandBase::chassis->getSpeedControllerOutput(3));	
 		SmartDashboard::PutNumber("Right Front Motor", CommandBase::chassis->getSpeedControllerOutput(2));
 		SmartDashboard::PutNumber("Right Rear Motor", CommandBase::chassis->getSpeedControllerOutput(4));
+		SmartDashboard::PutBoolean("Kicker Status", CommandBase::kicker->kickerStatus(0));
+		*/
 		Scheduler::GetInstance()->Run();
 	}
 	
