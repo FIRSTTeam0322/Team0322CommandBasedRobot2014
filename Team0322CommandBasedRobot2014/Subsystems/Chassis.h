@@ -19,10 +19,10 @@ public:
 	Chassis();
 	void InitDefaultCommand();
 	void autoDriveSystem(float, float);
-	void driveWithJoystick(Joystick *leftStick, Joystick *rightStick);
-	void precisionDriveSystem(Joystick *leftStick, Joystick *rightStick);
-	void brake();
-	void coast();
+	void driveWithJoystick(Joystick*, Joystick*);
+	void precisionDriveSystem(Joystick*, Joystick*);
+	void brake(void);
+	void coast(void);
 	float getSpeedControllerOutput(int);
 };
 
