@@ -63,19 +63,19 @@ void Chassis::coast() {
 float Chassis::getSpeedControllerOutput(int selection) {
 	switch(selection) {
 		case 1:
-			return(frontLeftMotor->Get());
+			return(-(frontLeftMotor->Get()));
 			break;
 		
 		case 2:
-			return(-(frontRightMotor->Get()));
+			return(frontRightMotor->Get());
 			break;
 		
 		case 3:
-			return(rearLeftMotor->Get());
+			return(-(rearLeftMotor->Get()));
 			break;
 		
 		case 4:
-			return(-(rearRightMotor->Get()));
+			return(rearRightMotor->Get());
 			break;
 		
 		default:
