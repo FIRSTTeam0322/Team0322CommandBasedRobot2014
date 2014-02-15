@@ -7,6 +7,8 @@
 #include "Commands/SmartDashboardUpdater.h"
 #include "CommandBase.h"
 
+void UpdateSmartDashboard(void);
+
 class Team0322CommandBasedRobot2014 : public IterativeRobot {
 private:
 	Command* autonomousCommand;
@@ -42,7 +44,8 @@ private:
 	
 	virtual void DisabledPeriodic() {
 		driversStationUpdater->Run();
-		smartDashboardUpdater->Run();
+		//smartDashboardUpdater->Run();
+		UpdateSmartDashboard();
 		/*
 		SmartDashboard::PutNumber("Gyro Angle", CommandBase::chassisSensors->getGyroAngle());
 		SmartDashboard::PutNumber("Left Drive Encoder", CommandBase::chassisSensors->getLeftDistance());
@@ -69,7 +72,8 @@ private:
 	
 	virtual void AutonomousPeriodic() {
 		driversStationUpdater->Run();
-		smartDashboardUpdater->Run();
+		//smartDashboardUpdater->Run();
+		UpdateSmartDashboard();
 		/*
 		SmartDashboard::PutNumber("Gyro Angle", CommandBase::chassisSensors->getGyroAngle());
 		SmartDashboard::PutNumber("Left Drive Encoder", CommandBase::chassisSensors->getLeftDistance());
@@ -99,7 +103,8 @@ private:
 	
 	virtual void TeleopPeriodic() {
 		driversStationUpdater->Run();
-		smartDashboardUpdater->Run();
+		//smartDashboardUpdater->Run();
+		UpdateSmartDashboard();
 		/*
 		SmartDashboard::PutNumber("Gyro Angle", CommandBase::chassisSensors->getGyroAngle());
 		SmartDashboard::PutNumber("Left Drive Encoder", CommandBase::chassisSensors->getLeftDistance());
@@ -121,7 +126,22 @@ private:
 	virtual void TestPeriodic() {
 		lw->Run();
 	}
+	
+	void UpdateSmartDashboard() {
+		SmartDashboard::PutNumber("Gyro Angle", CommandBase::chassisSensors->getGyroAngle());
+		SmartDashboard::PutNumber("Left Drive Encoder", CommandBase::chassisSensors->getLeftDistance());
+		SmartDashboard::PutNumber("Right Drive Encoder", CommandBase::chassisSensors->getRightDistance());
+		SmartDashboard::PutNumber("X-Axis Accelerometer", CommandBase::chassisSensors->getAccelerometerXData());
+		SmartDashboard::PutNumber("Y-Axis Accelerometer", CommandBase::chassisSensors->getAccelerometerYData());
+		SmartDashboard::PutNumber("Z-Axis Accelerometer", CommandBase::chassisSensors->getAccelerometerZData());
+		SmartDashboard::PutNumber("Left Drive Stick", CommandBase::oi->getDriveStickLeft()->GetY());
+		SmartDashboard::PutNumber("Right Drive Stick", CommandBase::oi->getDriveStickRight()->GetY());
+		SmartDashboard::PutNumber("Left Front Motor", CommandBase::chassis->getSpeedControllerOutput(1));
+		SmartDashboard::PutNumber("Left Rear Motor", CommandBase::chassis->getSpeedControllerOutput(3));	
+		SmartDashboard::PutNumber("Right Front Motor", CommandBase::chassis->getSpeedControllerOutput(2));
+		SmartDashboard::PutNumber("Right Rear Motor", CommandBase::chassis->getSpeedControllerOutput(4));
+		SmartDashboard::PutBoolean("Kicker Status", CommandBase::kicker->kickerStatus(0));
+	}
 };
 
 START_ROBOT_CLASS(Team0322CommandBasedRobot2014);
-
