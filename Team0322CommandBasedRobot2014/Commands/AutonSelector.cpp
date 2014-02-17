@@ -5,9 +5,6 @@ AutonSelector::AutonSelector() {
 	// Use requires() here to declare subsystem dependencies
 	// eg. requires(chassis);
 	Requires(autonomusModeSwitches);
-	// I guess I didn't need these two declarations
-	//int mode;
-	//Command* autonCommand = NULL;
 }
 
 // Called just before this Command runs the first time
