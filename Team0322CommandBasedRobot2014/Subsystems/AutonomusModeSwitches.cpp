@@ -17,14 +17,14 @@ void AutonomusModeSwitches::InitDefaultCommand() {
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
 int AutonomusModeSwitches::GetMode() {
-	int mode = 0;
-	if (switch1)
-		mode = mode + 1;
-	if (switch2)
-		mode = mode + 2;
-	if (switch3)
-		mode = mode + 4;
-	if (switch4)
-		mode = mode + 8;
+	mode = 0;
+	if (switch1) mode = mode + 1;
+	if (switch2) mode = mode + 2;
+	if (switch3) mode = mode + 4;
+	if (switch4) mode = mode + 8;
 	return mode;
+}
+
+void AutonomusModeSwitches::SetMode(int setting) {
+	mode = setting;
 }
