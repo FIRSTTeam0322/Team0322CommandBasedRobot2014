@@ -23,6 +23,14 @@ void AutonSelector::Execute() {
 		case 0:
 			autonCommand = new AutonDoNothing();
 			break;
+			
+		case 1:
+			autonCommand = new AutonDriveForward();
+			break;
+			
+		case 2:
+			autonCommand = new DriveForwardAndScore1Pt();
+			break;
 		
 		default:
 			autonCommand = new AutonDoNothing();
