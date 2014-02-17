@@ -1,5 +1,7 @@
 #include "AutonSelector.h"
 #include "AutonDoNothing.h"
+#include "AutonDriveForward.h"
+#include "AutonDriveForwardAndScore1Pt.h"
 
 AutonSelector::AutonSelector() {
 	// Use requires() here to declare subsystem dependencies
@@ -26,7 +28,7 @@ void AutonSelector::Execute() {
 			break;
 			
 		case 2:
-			autonCommand = new DriveForwardAndScore1Pt();
+			autonCommand = new AutonDriveForwardAndScore1Pt();
 			break;
 		
 		default:
