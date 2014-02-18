@@ -1,0 +1,20 @@
+DRIVE_STICK_LEFT
+Left Side Drive = Y Axis
+
+(ArcadeDrive System = X-Axis & Y-Axis)
+
+Brake Control = Button 1 (Trigger)
+
+DRIVE_STICK_RIGHT
+Right Side Drive = Y Axis
+
+Precision Drive System = [While Holding Button 1(Trigger)] DRIVE_STICK_RIGHT (Arcade Style)
+
+
+MANIPULATOR_STICK
+
+Manual Reel Control = (While Holding Button 7 [L1]) Left Stick Y-Axis
+Manual Lock Control = (While Holding Button 8 [R1]) Right Stick Y-Axis
+
+Fire Kicker = Button 1
+Reset Kicker = Button 2

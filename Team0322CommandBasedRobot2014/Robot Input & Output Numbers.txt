@@ -1,0 +1,40 @@
+CHASSIS
+frontLeftMotor = PWM Left,1
+rearLeftMotor = PWM Left,2
+
+frontRightMotor = PWM Right,1
+rearRightMotor = PWM Right,2
+
+leftFrontBrake = DigitalOutput Left,3
+leftRearBrake = DigitalOutput Left,4
+rightFrontBrake = DigitalOutput Right,3
+rightRearBrake = DigitalOutput Right,4
+
+
+CHASSIS_SENSORS
+leftEncoder = DigitalInput Left,1 & Left,11
+rightEncoder = DigitalInput Right,1 & Right,11
+
+Gyroscope = Analog,1
+
+Accelerometer X = Analog,2
+Accelerometer Y = Analog,3
+Accelerometer Z = Analog,4
+I2C Accelerometer = I2C
+
+
+KICKER
+kickerRelease = PWM Left,3
+
+kickerLeftReel = PWM Left,4
+kickerRightReel = PWM Right,4
+
+kickerSensorLeft = DigitalInput Left,5
+kickerSensorRight = DigitalInput Right,5
+
+
+AUTONOMUS_MODE_SWITCHES
+switch1 = DigitalInput Left,9
+switch2 = DigitalInput Left,10
+switch3 = DigitalInput Right,9
+switch4 = DigitalInput Right,10
