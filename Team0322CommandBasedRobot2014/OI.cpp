@@ -33,9 +33,8 @@ OI::OI() {
 	// Create the Kicker & Reel Override controls
 	reelOverride = new JoystickButton(manipulatorStick, 7);
 	kickerOverride = new JoystickButton(manipulatorStick, 8);
-	
-	if (reelOverride->Get()) reelOverride->WhileHeld(new ManualReelControl());
-	else if (kickerOverride->Get()) kickerOverride->WhileHeld(new ManualLockControl());
+	reelOverride->WhileHeld(new ManualReelControl());
+	kickerOverride->WhileHeld(new ManualLockControl());
 }
 
 Joystick* OI::getDriveStickLeft() {
