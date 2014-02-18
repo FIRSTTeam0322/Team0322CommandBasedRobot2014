@@ -10,13 +10,9 @@ Kicker::Kicker() : Subsystem("Kicker") {
 	kickerLeftReel = new Victor(DIGITAL_MODULE_LEFT,4);
 	kickerRightReel = new Victor(DIGITAL_MODULE_RIGHT,4);
 	
-	// Create the DigitalInput objects for the kicker set detectors
-	kickerFront1 = new DigitalInput(DIGITAL_MODULE_LEFT,5);
-	kickerFront2 = new DigitalInput(DIGITAL_MODULE_RIGHT,5);
-	
 	// Create the DigitalInput objects for the kicker release and reset detectors
-	kickerSensorLeft = new DigitalInput(DIGITAL_MODULE_LEFT,6);
-	kickerSensorRight = new DigitalInput(DIGITAL_MODULE_RIGHT,6);
+	kickerSensorLeft = new DigitalInput(DIGITAL_MODULE_LEFT,5);
+	kickerSensorRight = new DigitalInput(DIGITAL_MODULE_RIGHT,5);
 }
     
 void Kicker::InitDefaultCommand() {

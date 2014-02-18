@@ -13,7 +13,7 @@ private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
 	Victor *kickerLeftReel, *kickerRightReel, *kickerRelease;
-	DigitalInput *kickerFront1, *kickerFront2, *kickerSensorLeft, *kickerSensorRight;
+	DigitalInput *kickerSensorLeft, *kickerSensorRight;
 	
 	bool kickerResetCheck(void);
 	bool kickerReleaseCheck(void);
