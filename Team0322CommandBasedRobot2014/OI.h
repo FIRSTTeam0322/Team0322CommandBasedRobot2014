@@ -5,8 +5,8 @@
 
 class OI {
 private:
-	static const int NUMAXIS = 5;
-	static const int NUMBUTTONS = 10;
+	static const int NUMAXIS = 4;
+	static const int NUMBUTTONS = 12;
 	
 	Joystick *driveStickLeft, *driveStickRight, *manipulatorStick;
 	

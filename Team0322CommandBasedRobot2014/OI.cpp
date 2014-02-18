@@ -31,8 +31,8 @@ OI::OI() {
 	kickerReset->WhileHeld(new ResetKicker());
 	
 	// Create the Kicker & Reel Override controls
-	reelOverride = new JoystickButton(manipulatorStick, 5);
-	kickerOverride = new JoystickButton(manipulatorStick, 6);
+	reelOverride = new JoystickButton(manipulatorStick, 7);
+	kickerOverride = new JoystickButton(manipulatorStick, 8);
 	
 	if (reelOverride->Get()) reelOverride->WhileHeld(new ManualReelControl());
 	else if (kickerOverride->Get()) kickerOverride->WhileHeld(new ManualLockControl());
