@@ -1,21 +1,16 @@
 #ifndef FIRE_KICKER_H
 #define FIRE_KICKER_H
 
-#include "../CommandBase.h"
+#include "Commands/CommandGroup.h"
 
 /**
  *
  *
  * @author CCRLH85
  */
-class FireKicker: public CommandBase {
-public:
+class FireKicker: public CommandGroup {
+public:	
 	FireKicker();
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
 };
 
 #endif
