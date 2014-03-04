@@ -14,7 +14,7 @@ void ManualReelControl::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void ManualReelControl::Execute() {
-	kicker->manualReelControl(oi->getManipulatorStick()->GetRawAxis(3));
+	kicker->manualReelControl(oi->getManipulatorStick()->GetRawAxis(2));
 }
 
 // Make this return true when this Command no longer needs to run execute()
