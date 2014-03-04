@@ -33,8 +33,8 @@ void Chassis::InitDefaultCommand() {
 // here. Call these from Commands.
 
 void Chassis::driveWithJoystick(Joystick *leftStick, Joystick *rightStick) {
-	//robotDrive->TankDrive(leftStick, rightStick);
-	robotDrive->ArcadeDrive(leftStick, true);
+	robotDrive->TankDrive(leftStick, rightStick);
+	//robotDrive->ArcadeDrive(leftStick, true);
 }
 
 void Chassis::autoDriveSystem(float left, float right) {
