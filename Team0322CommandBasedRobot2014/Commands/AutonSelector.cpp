@@ -35,6 +35,7 @@ void AutonSelector::Execute() {
 			autonCommand = new AutonDoNothing();
 			return;
 	}
+	autonCommand->Start();
 	autonCommand->Run();
 }
 
