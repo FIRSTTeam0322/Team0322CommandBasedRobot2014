@@ -13,7 +13,7 @@ void AutonDriveForward::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void AutonDriveForward::Execute() {
-	chassis->autoDriveSystem(0.75, 0.75);
+	chassis->autoDriveSystem(-0.75, -0.75);
 }
 
 // Make this return true when this Command no longer needs to run execute()
