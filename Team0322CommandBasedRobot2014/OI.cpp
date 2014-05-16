@@ -2,6 +2,8 @@
 #include "Commands/BrakeControl.h"
 #include "Commands/PrecisionDrive.h"
 #include "Commands/FireKicker.h"
+#include "Commands/LowerBallRestraint.h"
+#include "Commands/RaiseBallRestraint.h"
 #include "Commands/ReelInKicker.h"
 #include "Commands/ResetKicker.h"
 #include "Commands/ResetReels.h"
@@ -35,6 +37,12 @@ OI::OI() {
 	kickerOverride = new JoystickButton(manipulatorStick, 8);
 	reelOverride->WhileHeld(new ManualReelControl());
 	kickerOverride->WhileHeld(new ManualLockControl());
+	
+	// Create the Ball Restraint controls
+	raiseBallRestraint = new JoystickButton(manipulatorStick, 3);
+	lowerBallRestraint = new JoystickButton(manipulatorStick, 4);
+	raiseBallRestraint->WhileHeld(new RaiseBallRestraint());
+	lowerBallRestraint->WhileHeld(new LowerBallRestraint());
 }
 
 Joystick* OI::getDriveStickLeft() {
