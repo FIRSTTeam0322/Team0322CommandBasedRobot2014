@@ -17,6 +17,7 @@ CommandBase::CommandBase() : Command() {
 DriverStationLCDSystem* CommandBase::driverStationLCDSystem = NULL;
 ChassisSensors* CommandBase::chassisSensors = NULL;
 AutonomusModeSwitches* CommandBase::autonomusModeSwitches = NULL;
+BallRestraint* CommandBase::ballRestraint = NULL;
 Chassis* CommandBase::chassis = NULL;
 Vision* CommandBase::vision = NULL;
 Kicker* CommandBase::kicker = NULL;
@@ -28,6 +29,7 @@ void CommandBase::init() {
 	driverStationLCDSystem = new DriverStationLCDSystem();
 	chassisSensors = new ChassisSensors();
 	autonomusModeSwitches = new AutonomusModeSwitches();
+	ballRestraint = new BallRestraint();
 	chassis = new Chassis();
 	kicker = new Kicker();
 	vision = new Vision();	

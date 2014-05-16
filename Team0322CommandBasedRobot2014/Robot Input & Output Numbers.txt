@@ -1,3 +1,6 @@
+BALL_RESTRAINT
+ballRestraintMotor = PWM Left,5
+
 CHASSIS
 frontLeftMotor = PWM Left,1
 rearLeftMotor = PWM Left,2

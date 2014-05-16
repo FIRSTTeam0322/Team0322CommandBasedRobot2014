@@ -4,6 +4,7 @@
 #include "Subsystems/DriverStationLCDSystem.h"
 #include "Subsystems/ChassisSensors.h"
 #include "Subsystems/AutonomusModeSwitches.h"
+#include "Subsystems/BallRestraint.h"
 #include "Subsystems/Chassis.h"
 #include "Subsystems/Kicker.h"
 #include "Subsystems/Vision.h"
@@ -24,6 +25,7 @@ public:
 	static DriverStationLCDSystem *driverStationLCDSystem;
 	static ChassisSensors *chassisSensors;
 	static AutonomusModeSwitches *autonomusModeSwitches;
+	static BallRestraint *ballRestraint;
 	static Chassis *chassis;
 	static Kicker *kicker;
 	static Vision *vision;

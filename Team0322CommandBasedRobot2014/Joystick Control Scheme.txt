@@ -18,3 +18,7 @@ Manual Lock Control = (While Holding Button 8 [R1]) Right Stick Y-Axis
 
 Fire Kicker = Button 1
 Reset Kicker = Button 2
+
+Raise Ball Restraint = Button 3
+Lower Ball Restraint = Button 4
+ 
