@@ -13,7 +13,7 @@ void ManualLockControl::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void ManualLockControl::Execute() {
-	kicker->manualLockControl(oi->getManipulatorStick()->GetRawAxis(4));
+	kicker->manualLockControl(oi->getManipulatorStick()->GetRawAxis(3));
 }
 
 // Make this return true when this Command no longer needs to run execute()
