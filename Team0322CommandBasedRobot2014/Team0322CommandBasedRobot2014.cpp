@@ -4,6 +4,7 @@
 #include "Commands/DriversStationUpdater.h"
 #include "Commands/ClearLCD.h"
 #include "Commands/AutonSelector.h"
+#include "Commands/AutonDriveForward.h"
 #include "Commands/SmartDashboardUpdater.h"
 #include "CommandBase.h"
 
@@ -21,6 +22,7 @@ private:
 	virtual void RobotInit() {
 		CommandBase::init();
 		autonomousCommand = new AutonSelector();
+		//autonomousCommand = new AutonDriveForward();
 		resetSensors = new ResetSensors();
 		driversStationUpdater = new DriversStationUpdater();
 		clearLCD = new ClearLCD();
